@@ -5,9 +5,7 @@ project(kizhi)
 # Compiler setup
 ################################
 
-add_definitions(-Wall)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(LOG_VERSION "0.0.1")
 
 ################################
 # Locate source
@@ -21,6 +19,17 @@ include_directories(include)
 # Build targets
 ################################
 
-add_executable(kizhi
+add_library(kizhi
     ${SRC}
     ${INCLUDES})
+
+################################
+# Export library
+################################
+
+export_project(
+    NAME kizhi
+    INCLUDES ${CMAKE_CURRENT_LIST_DIR}/include
+    LIBS kizhi
+    VERSION ${LOG_VERSION}
+)
