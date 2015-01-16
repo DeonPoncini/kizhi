@@ -21,10 +21,17 @@ Usage
 -----
 Use the log macros like so:
 
-    KIZHI_LEVEL(tag) << "Message " << 1 << " works like a stream ";
+    KIZHI_LEVEL_TF(tag) << "Message " << 1 << " works like a stream ";
 
 Each message prints out the file name and line number along with the message
 to help debugging
+
+Each macro comes in four varieties:
+
+    KIZHI_TRACE_TF(tag) // prints a tag, message, file and line numbers
+    KIZHI_TRACE_T(tag) // prints a tag and message
+    KIZHI_TRACE_F(tag) // prints a message, file and line numbers
+    KIZHI_TRACE(tag) // prints a message only
 
 License
 -------
