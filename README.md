@@ -20,7 +20,8 @@ framework.
 Usage
 -----
 Use the log macros like so:
-    KIZHI_<LEVEL> << "Message " << 1 << " works like a stream ";
+
+    KIZHI_LEVEL(tag) << "Message " << 1 << " works like a stream ";
 
 Each message prints out the file name and line number along with the message
 to help debugging
