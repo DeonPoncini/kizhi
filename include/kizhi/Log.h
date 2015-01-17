@@ -7,14 +7,23 @@
 namespace kizhi
 {
 
+enum Options
+{
+    TAG       = 0x01,
+    FILE_LINE = 0x02,
+    TIMESTAMP = 0x04,
+};
+
 enum class Level
 {
+    ALL = 0,
     TRACE,
     DEBUG,
     INFO,
     WARN,
     ERROR,
     FATAL,
+    SILENT
 };
 
 class Log
@@ -37,8 +46,10 @@ private:
     std::stringstream mBuffer;
 
     // configuration flags
-    bool mUseTag;
-    bool mUseFileLine;
+    int mOptions;
+
+    static Level MIN_LEVEL;
+    void setLevel();
 };
 
 template <>
