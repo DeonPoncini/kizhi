@@ -33,6 +33,22 @@ Each macro comes in four varieties:
     KIZHI_TRACE_F(tag) // prints a message, file and line numbers
     KIZHI_TRACE(tag) // prints a message only
 
+The log level output can be controlled at runtime on Linux by using the macro
+
+    KIZHI_MIN_LEVEL
+
+Setting this will only print messages out with log level equal to or higher than
+the min level. The levels are:
+
+    ALL
+    TRACE
+    DEBUG
+    INFO
+    WARN
+    ERROR
+    FATAL
+    SILENT
+
 License
 -------
 Copyright (c) 2015 Deon Poncini.
